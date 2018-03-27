@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>通过css进行停止滚动</title>
+		<style>
+			body{font-size: 2.0rem;height: 100%;}
+			.modal-wrap{display: none;position: fixed;height: 100%;width: 100%;}
+    .modal-cover{
+    	background: rgba(0, 0, 0, 0.5); position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    }
+    .modal-content{
+    position: absolute;
+    height: 50%;
+    width: 80%;
+	overflow: auto;
+	top: 25%;
+    transform: translateY(-50%);
+    border: solid 1px #ddd;
+    background: #fff;
+    padding: 1em;
+}
+		</style>
+		<script type="text/javascript">
+			function closeModal(){
+				document.getElementsByClassName("modal-wrap")[0].style.display="none";
+			}
+			function openModal(){
+				document.getElementsByClassName("modal-wrap")[0].style.display="block";
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>多久啊身份和大家可尽快落实的更健康的<button class="open-modal" onclick="openModal()">openModal</button>火车就开了更好客户风格打开</h1>
+		
+		<div class="modal-wrap">
+			<div class="modal-cover"></div>
+			<div class="modal-content">
+				<button onclick="closeModal">closeModal</button>
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+				本文章借鉴这个网站 https://segmentfault.com/a/1190000005617307
+			</div>
+		</div>
+	</body>
+</html>
