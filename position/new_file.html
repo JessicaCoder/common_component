@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<script src="http://vuejs.org/js/vue.js"></script>
+		<meta charset="utf-8">
+		<title>JS Bin</title>
+		<style type="text/css">
+			.item {
+  border:1px solid #333;
+  padding:10px 20px;
+  margin:5px;
+  background-color: #f5f5f5;  
+}
+.btn{
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  text-decoration: underline;
+  border: 1px solid #999;
+  text-align: center;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+		</style>
+	</head>
+
+	<body>
+		<div id="test">
+			<div class="item" v-for="item in items" @click="toggle(item,$index)" :class="{$index==0 ? 'active':''}">
+				<div>{{item.name}}</div>
+				<div v-show="item.show">
+					初始隐藏
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var data = [{
+				name: 'a',
+			}, {
+				name: 'b',
+			}, {
+				name: 'c',
+			}];
+
+			new Vue({
+				el: '#test',
+				data: {
+					items: data
+				},
+				methods: {
+					toggle: function(item,$index) {
+						console.log(item)
+						console.log(!item.show)
+//						Vue.set(item, 'show', this.show = !this.show);
+						  var item = this.items[$index];
+					      var state = item.show;
+					      var obj = $.extend(true, {}, item);
+					      obj.show = !state;
+					      this.items.$set($index, obj);
+//						item.show = !item.show;
+					}
+				}
+			});
+		</script>
+
+	</body>
+
+</html>
